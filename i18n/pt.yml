@@ -12,6 +12,8 @@ terms:
     about: Sobre
     read: ler
     old_posts: postagens antigas
+    not_found: Página não encontrada
+    error: Error
 
 footer:
     license: O conteúdo desta página está licenciado sob

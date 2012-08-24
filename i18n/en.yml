@@ -12,6 +12,8 @@ terms:
     about: About
     read: read
     old_posts: old posts
+    not_found: Page not found
+    error: Error
 
 footer:
     license: The content of this page is licensed under
