@@ -1,0 +1,21 @@
+// header
+.header
+  a
+    text-decoration: none
+
+// menu
+.menu-item
+  background-color: $menuLinkBackground
+  
+  &:hover
+    background-color: $menuLinkBackgroundHover
+
+  &.selected
+    background: none
+    a
+      color: $menuSelectedLinkForeground
+      border-bottom: dotted
+
+  a
+    color: $menuLinkForeground
+    font-family: $serifFontFamily

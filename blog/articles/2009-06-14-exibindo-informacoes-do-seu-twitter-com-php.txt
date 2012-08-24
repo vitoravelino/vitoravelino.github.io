@@ -1,0 +1,50 @@
+title: "Exibindo informações do seu Twitter com PHP"
+slug: exibindo-informacoes-do-seu-twitter-com-php
+author: Vítor Avelino
+date: 2009/06/14
+
+Na semana passada quando montei minha [página de entrada](http://vitoravelino.net/), estive pensando em por mais informações além de um simples *sobre*. Uma das coisas que eu tinha em mente era os meus últimos tweets que são mostrados aqui no blog através do [Twitter Tools](http://wordpress.org/extend/plugins/twitter-tools/). Porém, eu necessitava saber como ter acesso aos tweets sem qualquer complicação. Ao pesquisar um pouco, encontrei uma solução legal e gostaria de compartilhá-la aqui.
+
+Mostrarei dois exemplos de métodos, da [API do Twitter](http://apiwiki.twitter.com/Twitter-API-Documentation), que não precisam de autenticação e servem apenas para a exibição de informações, que é o meu objetivo.
+
+Para tratamento do arquivo XML de retorno da API utilizarei algumas funções [SimpleXML](http://br.php.net/simplexml) do PHP5. O primeiro exemplo exibirá os últimos cinco tweets de um usuário, equanto o segundo informações sobre o usuário.
+
+### Primeiro exemplo
+
+<pre>
+    <code class="prettyprint">
+&lt;?
+    $xml = simplexml_load_file(&quot;http://twitter.com/statuses/user_timeline/nome-usuario.xml?count=5&quot;);
+    for ($i = 0; $i &lt; count($xml-&gt;status); $i++) {
+        echo $xml-&gt;status[$i]-&gt;text;
+    }
+?&gt;
+    </code>
+</pre>
+
+No código acima é requisitado a API do Twitter os cinco últimos tweets do usuário <em>nome-usuario</em>. Perceba que é o parâmetro *count* é quem limita a quantidade de tweets que será retornado no XML. No meu caso, a url ficaria:
+
+<blockquote>http://twitter.com/statuses/user_timeline/vitoravelino.xml?count=5</blockquote>
+
+### Segundo exemplo
+
+<pre>
+    <code class="prettyprint">
+&lt;?
+    $xml = simplexml_load_file(&quot;http://twitter.com/users/show/nome-usuario.xml&quot;);
+    echo $xml-&gt;name;
+    echo $xml-&gt;screen_name;
+    echo $xml-&gt;location;
+    echo $xml-&gt;followers_count;
+    echo $xml-&gt;friends_count;
+?&gt;
+    </code>
+</pre>
+
+No código acima é requisitado todas as informações públicas do usuário *nome-usuario*. Não é necessário passar nenhum parâmetro. As informações só serão retornadas se o usuário não ativar a proteção do seu perfil. No meu caso, a url ficaria:
+
+<blockquote>http://twitter.com/users/show/vitoravelino.xml</blockquote>
+
+Veja o [EXEMPLO](http://php.vitoravelino.net/1/) na prática e o <a href="http://php.vitoravelino.net/1/index.phps">CÓDIGO FONTE</a>.
+
+Texto interessante sobre a API do Twitter: [http://www.insideria.com/2009/06/chapter-4-meet-the-twitter-api.html](http://www.insideria.com/2009/06/chapter-4-meet-the-twitter-api.html)

@@ -1,0 +1,25 @@
+title: "10 maneiras de tornar seu site mais acessível utilizando padrões web"
+slug: 10-maneiras-de-tornar-seu-site-mais-acessivel-utilizando-padroes-web
+author: Vítor Avelino
+date: 2009/06/19
+
+Quando trata-se de criar websites hoje, a principal preocupação que vem a cabeça é se eles estão acessíveis a todos os possíveis usuários que os visitarão. Pode parecer besteira a primeira vista, mas uma simples mudança ou adição de uma tag no cabeçalho faz diferença. Isso reflete, também, num melhor rastreamento dos robôs das páginas de busca.
+
+Sempre preocupei-me em utilizar os padrões web para que meus websites tivessem, além de uma boa sintaxe e semântica, maior acessibilidade.
+
+Navegando ontem pelo [SmashingMagazine](http://www.smashingmagazine.com/), encontrei um [post](http://www.smashingmagazine.com/2009/06/18/10-ways-to-make-your-site-accessible-using-web-standards/) muito interessante e simples que falava sobre acessibilidade junto com padrões web. São abordados os seguintes pontos:
+
+   * Especificar o DOCTYPE correto;
+   * Definir o namespace e a linguagem padrão;
+   * Utilizar http-equiv, language, description e keywords meta tags;
+   * Utilize uma navegação acessível;
+   * Utilize corretamente JavaScript no meio da página;
+   * Utilize corretamente os *HTML Entities*;
+   * Utilize apenas tags e atributos minúsculos;
+   * Utilize Label para todos os elementos input de um form;
+   * Utilize conteúdo alternativo para imagens;
+   * Utilize os atributos 'id' e 'class' do CSS corretamente.
+
+Lembrando que, não é o fato de alguém estar seguindo todos os pontos acima que o website estará 100% acessível. Propunho um estudo maior sobre o assunto, pois valerá a pena.
+
+Veja o post [10 Ways To Make Your Site Accessible Using Web Standards](http://www.smashingmagazine.com/2009/06/18/10-ways-to-make-your-site-accessible-using-web-standards/) na íntegra.

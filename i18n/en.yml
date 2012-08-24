@@ -1,0 +1,45 @@
+lang: en-US
+
+terms:
+    and: and
+    blog: Blog
+    contact: Contact
+    home: Home
+    projects: Projects
+    message: Message
+    name: Name
+    brazil: Brazil
+    about: About
+    read: read
+    old_posts: old posts
+
+footer:
+    license: The content of this page is licensed under
+
+about_me:
+    paragraph1: 23, brazillian, web developer, graduated in Computer Science by Federal University of Campina Grande.
+    paragraph2: My interests are based around web standards, accessbility and user experience, distributed systems, cloud computing, scalability and performance, [...]
+    paragraph3: In the spare time a good tv show, movie, video game, coffee, hacking or some beers (sic) with friends.
+
+sidebar:
+    location: Location
+    email: '&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#118;&#105;&#116;&#111;&#114;&#097;&#118;&#101;&#108;&#105;&#110;&#111;&#046;&#110;&#101;&#116;'
+
+contact:
+    paragraph: Hey! Feel free to leave a message about whatever you want.
+    notice: Message sent!
+    send_button: Send
+
+projects:
+    paragraph: You can also check out <a href="http://github.com/vitoravelino" target="_blank">my github account</a>.
+    sloth: 'A simple todolist done with a single purpose: study Backbone.js and RequireJS.'
+    vitoravelino: The source code of my website and blog.
+    silex: Base bootstrap project for small / non complex PHP modular applications based on Silex framework.
+    figgo: A platform to management and support for cultural centers that aims the optmization and solve daily routine problems.
+
+blog:
+    about:
+        paragraph1: I'm graduted in Computer Science by UFCG and I'm currently a web developer focused on front-end development.
+        paragraph2: Another adventurer at São Paulo searching for the lost <s>dream</s> treasure.
+    search: your search here
+    feed: What about feeding youself <a href="/blog/index.xml">here</a>?

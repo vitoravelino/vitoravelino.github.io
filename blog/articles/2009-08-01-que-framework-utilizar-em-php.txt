@@ -1,0 +1,40 @@
+title: "Que framework utilizar em PHP?"
+slug: que-framework-utilizar-em-php
+author: Vítor Avelino
+date: 2009/08/01
+
+Seguindo a mesma linha de raciocínio do post anterior sobre frameworks para Flex, tentarei expor o pouco de conhecimento que tenho sobre frameworks PHP.
+
+A idéia de estudar sobre frameworks em Flex veio primeiramente da curiosidade de saber o porque de todos falarem tanto sobre utilizar frameworks em PHP. Para mim, era possível fazer tudo de forma simples sem ter que utilizar o que eles chamavam de framework. Mas, ao assistir uma palestra no FISL apresentada por quatro caras da SERPRO-BA, tive a certeza que aquilo ali parecia ser muito bom e que não estavam falando asneiras sobre o porque de utilizar um framework.
+
+A palestra foi uma espécie de *tradeoff* entre **Zend Framework**, **Codeigniter**, **CakePHP **e **Symfony**. Um tentando derrubar o outro, não era a toa que o nome da palestra foi intitulada de *Framewarks PHP*. Deixemos  essa <span style="text-decoration: line-through;">saudade</span> conversa fiada de lado e vamos ao que interessa.
+
+Não posso enxer a boca para falar que conheço bem os quatro frameworks que citei acima, posso até equivocar-me com as palavras a seguir, mas passarei a concepção que tive sobre cada um ao tentar estudá-los.
+
+### Zend Framework
+
+<a href="http://framework.zend.com/" target="_blank"><img class="left" src="http://vitoravelino.net/blog/wp-content/uploads/2009/08/zend-logo.jpg" alt="Zend logo" /></a>Tem uma grande comunidade de desenvolvedores que o utiliza, sendo fácil o acesso a informações sobre o framework. *Zend *foi a empresa que reescreveu o engine OO para o PHP 5. É um dos, se não, o mais popular hoje. É robusto e é recomendado um conhecimento amplo em PHP. O único incoviniente para algum desenvolvedor é ser suportado apenas PHP 5+.
+
+---
+
+### Codeigniter
+
+<a href="http://www.codeigniter.com/" target="_blank"><img class="left" src="http://vitoravelino.net/blog/wp-content/uploads/2009/08/codeigniter-logo.jpg" alt="Codeigniter logo" /></a>Fácil de utilizar, alta performance e velocidade. Recomendado para pequenos projetos, oferece 'helpers' para codificação rápida, suporte recheado de documentação. Não é completamente OO como outros frameworks, mas dá suporte a PHP 4 e 5. Aconselhável para programadores iniciantes em PHP.
+
+---
+
+### CakePHP
+
+<a href="http://www.cakephp.org/" target="_blank"><img class="left" src="http://vitoravelino.net/blog/wp-content/uploads/2009/08/cakephp-logo.png" alt="CakePHP logo" /></a>Recomendado para desenvolvedores iniciantes a avançados. Foca-se arduamente no desenvolvimento rápido. O rápido crescimento no suporte, simplicidade e escalabilidade vem fazendo dele um dos frameworks mais populares. Assim como o *Codeigniter*, dá suporte a PHP 4 e 5.
+
+---
+
+### Symfony
+
+<a href="http://www.symfony-project.org/" target="_blank"><img class="left" src="http://vitoravelino.net/blog/wp-content/uploads/2009/08/symfony-logo.png" alt="Symfony logo" /></a>Framework bastante poderoso, mas focado em desenvolvedores avançados. É muito poderoso, mas perde um pouco na performance para outros frameworks. Aconselhável para projetos *high level*. Percebi bastante configuração para deixar a base pronta pra o desenvolvimento front. Assim como o Zend, só é suportado PHP 5+.
+
+---
+
+Depois de muito pensar, gostei muito do **Zend Framework** e **Codeigniter**. Parecem encaixar-se em dois perfis de projetos que eu desenvolveria. Outros frameworks que chamaram-me atenção foi o **KohanaPHP **e **Yii**. O *KohanaPHP* parece ser bem parecido com o *Codeigniter* sendo que foi feito somente em cima do PHP 5. Já, o *Yii* é praticamente uma mãe, faz quase tudo pra você com alguns comandos no console.
+
+Uma boa leitura sobre frameworks PHP é a <a href="http://www.noupe.com/php/discussing-php-frameworks.html" target="_blank">deste artigo</a>.

@@ -1,0 +1,15 @@
+<% 
+  content_for :title do
+     "Vítor Avelino - #{t.terms.home}"
+  end 
+%>
+<div id="main" class="main" role="main" data-type="site">
+    <article class="column-left">
+        <img class="fleft avatar-index" src="http://cloudfront.vitoravelino.net/images/me120.jpg" alt="Foto de Vítor Avelino" title="Foto de Vítor Avelino" />
+        <p><%= t.about_me.paragraph1 %></p>
+        <p><%= t.about_me.paragraph2 %></p>
+        <p><%= t.about_me.paragraph3 %></p>
+    </article>
+
+    <%= erb :_sidebar %>
+</div> <!-- #main -->

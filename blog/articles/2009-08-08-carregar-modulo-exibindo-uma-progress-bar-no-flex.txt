@@ -1,0 +1,98 @@
+title: "Carregar módulo exibindo uma progress bar no Flex"
+slug: carregar-modulo-exibindo-uma-progress-bar-no-flex
+author: Vítor Avelino
+date: 2009/08/08
+
+Quem não acha bacana carregar um módulo sabendo quantos porcentos faltam para ele ser carregado por completo? Baseado nisso e na necessidade que tive, aproveitei para postar um exemplo aqui.
+
+Sabemos que para carregar um módulo precisamos de um *loader* para tal. O Flex oferece uma classe/componente <a href="http://livedocs.adobe.com/flex/3/langref/index.html?mx/modules/ModuleLoader.html" target="_blank">ModuleLoader</a> pronto para você, porém ele é meio teimoso comigo e decidi aproveitar parte do código dele para fazer meu próprio ModuleLoader.
+
+Neste exemplo utilizo a técnica de *code behind* que postei em um <a href="http://vitoravelino.net/blog/2009/08/08/code-behind-uma-tecnica-super-interessante-de-se-usar/" target="_blank">artigo anterior</a>.
+
+Segue o código dele abaixo:
+
+### CustomModuleLoaderUI.mxml
+
+<pre>
+    <code class="prettyprint">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;mx:Box xmlns:mx=&quot;http://www.adobe.com/2006/mxml&quot; width=&quot;400&quot; height=&quot;250&quot;&gt;
+    &lt;mx:states&gt;
+        &lt;mx:State name=&quot;progress&quot;&gt;
+            &lt;mx:AddChild position=&quot;lastChild&quot;&gt;
+                &lt;mx:Canvas width=&quot;100%&quot; height=&quot;100%&quot;&gt;
+                    &lt;mx:ProgressBar id=&quot;progressBar&quot; horizontalCenter=&quot;0&quot; verticalCenter=&quot;0&quot;/&gt;
+                &lt;/mx:Canvas&gt;
+            &lt;/mx:AddChild&gt;
+        &lt;/mx:State&gt;
+    &lt;/mx:states&gt;
+&lt;/mx:Box&gt;
+    </code>
+</pre>
+
+### CustomModuleLoader.as</strong>
+
+<pre>
+    <code class="prettyprint">
+package net.vitoravelino {
+
+    // imports...
+
+    public class CustomModuleLoader extends CustomModuleLoaderUI
+    {
+
+        private var module:IModuleInfo = null;
+        private var child:DisplayObject = null;
+        public function CustomModuleLoader() { }
+
+        public function loadModule(url:String = null):void {
+            if (url == null) {
+                return;
+            }
+            if (module) {
+                return;
+            }
+            module = ModuleManager.getModule(url);
+            this.currentState = &quot;progress&quot;;
+            progressBar.source = module;
+            module.addEventListener(ModuleEvent.READY, moduleReadyHandler);
+            module.addEventListener(ModuleEvent.ERROR, moduleErrorHandler);
+            module.load();
+        }
+
+        public function unloadModule():void {
+            if (child) {
+                this.removeChild(child);
+                child = null;
+            }
+            if (module) {
+                module.removeEventListener(ModuleEvent.READY, moduleReadyHandler);
+                module.removeEventListener(ModuleEvent.ERROR, moduleErrorHandler);
+                module.unload();
+                module = null;
+            }
+        }
+
+        private function moduleReadyHandler(e:ModuleEvent):void {
+            this.currentState = &quot;&quot;;
+            child = module.factory.create() as DisplayObject;
+            if (child) {
+                addChild(child);
+            }
+        }
+
+        private function moduleErrorHandler(e:ModuleEvent):void {
+            this.currentState = &quot;&quot;;
+            this.unloadModule();
+            Alert.show(e.errorText, &quot;Error trying to load module&quot;);
+        }
+    }
+}
+    </code>
+</pre>
+
+Uma dica é fuçar o código de componentes que você acha que pode melhorar ou mesmo para entender melhor seu funcionamento. Nem sempre o que temos em mãos é o melhor, então mãos à obra! Portanto, fica a dica. ;)
+
+Confira a <a href="http://dev.vitoravelino.net/flex/1/ModuleLoaderWithProgressBar.html" target="_blank">demo</a> e o <a href="http://dev.vitoravelino.net/flex/1/srcview/index.html" target="_blank">source</a>.
+
+P.S.: A propósito, um belo papel de parede junto ao source. Confira!

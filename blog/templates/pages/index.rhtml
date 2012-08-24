@@ -1,0 +1,17 @@
+<section class="articles column-left">
+  <% for article in articles[0...5] %>
+    <article class="post">
+      <header>
+        <h2><a href="<%= article.path %>"><%= article.title %></a></h2>
+        <span class="post-date"><%= article.date %></span>
+      </header>
+
+      <section class="content">
+        <%= article.summary 250 %>
+      </section>
+      <div class="more"><a href="<%= article.path %>">ler &raquo;</a></div>
+    </article>
+    <hr />
+  <% end %>
+  <a href="/blog/archives">&laquo; postagens antigas</a>
+</section>

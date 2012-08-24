@@ -1,0 +1,70 @@
+title: "Dica: cuidado ao utilizar 'this' dentro de uma função anônima"
+slug: dica-cuidado-ao-utilizar-this-dentro-de-uma-funcao-anonima
+author: Vítor Avelino
+date: 2009/09/02
+
+Vamos direto ao ponto. O que acontece é que muitas vezes utiliza-se a palavra-chave *this *para referenciar a classe/objeto como um todo e quando este mesmo *this *é utilizado dentro de uma função anônima/closure de uma classe ele acaba referindo-se ao objeto Global e não a classe que possui aquela função.
+
+Segue um exemplo mostrando a quem o *this *vai referir-se dependendo do escopo em que foi chamado:
+
+<pre>
+    <code class="prettyprint">
+package {
+     public class Example
+     {
+         public function Example() {
+            var f:Funcion = function():void { // função anônima
+                trace(this);
+            }
+            f();
+            trace(this);
+         }
+    }
+}
+    </code>
+</pre>
+
+As saída serão:
+
+<pre>
+    <code class="prettyprint">
+[object global]
+[object Example]
+    </code>
+</pre>
+
+A solução que encontrei para isso é guardar a referência da classe/objeto em algum lugar no escopo da classe.
+
+Segue um exemplo de como seria:
+
+<pre>
+    <code class="prettyprint">
+package {
+     public class Example
+     {
+         var myThis:Example = this as Example;
+
+         public function Example() {
+            var f:Funcion = function():void { // função anônima
+                trace(this);
+            }
+            f();
+            trace(myThis);
+            trace(this);
+         }
+    }
+}
+    </code>
+</pre>
+
+A saída será:
+
+<pre>
+    <code class="prettyprint">
+[object global]
+[object ClassExample]
+[object ClassExample]
+    </code>
+</pre>
+
+Até a próxima! ;)

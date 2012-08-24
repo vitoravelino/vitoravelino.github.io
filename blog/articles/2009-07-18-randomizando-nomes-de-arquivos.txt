@@ -1,0 +1,173 @@
+title: "Randomizando nomes de arquivos"
+slug: randomizando-nomes-de-arquivos
+author: Vítor Avelino
+date: 2009/07/18
+
+A idéia surgiu devido o aparelho de som do carro do meu pai não ser lá um iPod Shuffle. Então pensei:
+
+> Já que ele não randomiza muito bem, que tal levar os nomes dos arquivos já randomizados?
+
+Decidi fazer rapidinho em Java e deu nisso aí:
+
+### RandomFiles.java
+
+<pre>
+    <code class="prettyprint">
+/*
+ *  RandomFiles.java
+ *  Copyright (C) 2009  Vítor Avelino
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+
+import java.io.File;
+import java.util.Random;
+
+public class RandomFiles {
+
+    private static Random randomizer = new Random();
+
+    /**
+    * Randomize the files of a specific directory.
+    *
+    * @param directory 	The directory that will have its file renamed
+    * @param subdir	&lt;code&gt;true&lt;/code&gt; if subdirectories' files have to be renamed
+    * 			&lt;code&gt;false&lt;/code&gt; if it's not necessary rename subdirectories' files
+    */
+    public static void randomize(String directory, boolean includeSubdirs) {
+        File dir = new File(directory);
+        if (!dir.isDirectory() || !dir.exists()) {
+            System.err.println(directory + &quot; não é um diretório ou não existe!&quot;);
+            System.exit(-1);
+        }
+        System.out.println(&quot;Inicializando renomeamento randômico...&quot;);
+        navigateInDirectories(dir, includeSubdirs);
+        System.out.println(&quot;Finalizado!&quot;);
+    }
+
+    private static void navigateInDirectories(File dir, boolean includeSubdirs) {
+        File renamed = null;
+        int randomNumber = 0;
+        for (File f : dir.listFiles()) {
+            do {
+                randomNumber = randomizer.nextInt();
+            } while (randomNumber &lt;= 0);
+            if (!f.isDirectory()) {
+                renamed = new File(FileUtil.getPath(f) + randomNumber + FileUtil.getExtension(f));
+                f.renameTo(renamed);
+                System.out.println(&quot;&gt;&gt;&gt; &quot; + f.getName() + &quot; renomeado para &quot; + randomNumber + FileUtil.getExtension(f));
+            } else if (includeSubdirs) {
+                System.out.println(&quot;- &quot; + f.getName() + File.separator);
+                navigateInDirectories(f, includeSubdirs);
+            }
+        }
+    }
+}
+    </code>
+</pre>
+
+### FileUtil.java
+
+<pre>
+    <code class="prettyprint">
+/*
+ *  FileUtil.java
+ *  Copyright (C) 2009  Vítor Avelino
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+
+import java.io.File;
+
+public class FileUtil {
+
+    /**
+    * Returns just the pathname of a file as string.
+    *
+    * @param f The file that will have the path extracted
+    * @return The pathname of a file
+    */
+    public static String getPath(File f) {
+        String absolutePath = f.getAbsolutePath();
+        return absolutePath.substring(0, absolutePath.lastIndexOf(File.separator) + 1);
+    }
+
+    /**
+    * Returns the extension of a file.
+    *
+    * @param The file that will have the extension extracted
+    * @return &lt;code&gt;null&lt;/code&gt; if the extension of a file doesn't exist, &lt;code&gt;extension&lt;/code&gt; if the file has one
+    */
+    public static String getExtension(File f) {
+        String name = f.getName();
+        return name.substring(name.lastIndexOf('.'));
+    }
+
+}
+    </code>
+</pre>
+
+A forma de utilizar é simples, segue um exemplo abaixo:
+
+<pre>
+    <code class="prettyprint lang-java">
+RandomFiles.randomize("D:\Teste\", false);
+RandomFiles.randomize("D:\Teste\", true);
+    </code>
+</pre>
+
+Para a primeira chamada a saída será:
+
+<pre>
+    <code>
+Inicializando renomeamento randômico...
+&gt;&gt;&gt; arquivo1.PDF renomeado para 538981388.PDF
+&gt;&gt;&gt; arquivo2.doc renomeado para 65861820.doc
+&gt;&gt;&gt; arquivo3.html renomeado para 210904720.html
+Finalizado!
+    </code>
+</pre>
+
+Para a segunda chamada a saída será:
+
+<pre>
+    <code>
+Inicializando renomeamento randômico...
+&gt;&gt;&gt; 210904720.html renomeado para 668609286.html
+&gt;&gt;&gt; 538981388.PDF renomeado para 573146098.PDF
+&gt;&gt;&gt; 65861820.doc renomeado para 417987190.doc
+- sub\
+&gt;&gt;&gt; arquivo4.PDF renomeado para 233716363.PDF
+&gt;&gt;&gt; arquivo5.doc renomeado para 657621617.doc
+&gt;&gt;&gt; arquivo6.html renomeado para 118165004.html
+Finalizado!
+    </code>
+</pre>
+
+As mensagens de saída foram utilizadas apenas para acompanhar a execução do programa.
+
+Espero que seja útil para alguém assim como foi para mim. Quando tiver tempo farei uma versão em Python e/ou Shell-Script e também instalarei um SO decente (viram o exemplo lixo, né?) aqui no PC da casa dos meus pais.
+
+Férias já! :~

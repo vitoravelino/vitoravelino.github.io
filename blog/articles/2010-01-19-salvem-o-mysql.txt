@@ -1,0 +1,10 @@
+title: "Salvem o MySQL!"
+slug: salvem-o-mysql
+author: Vítor Avelino
+date: 2010/01/19
+
+É isso mesmo! Nunca tive dúvida de que uma hora ou outra isso iria acontecer. A Oracle não é flor que se cheire; nunca fui com a cara dela. Talvez seja porque sou um adepto ao <a href="http://www.google.com/url?sa=t&amp;source=web&amp;ct=res&amp;cd=1&amp;ved=0CAoQFjAA&amp;url=http%3A%2F%2Fpt.wikipedia.org%2Fwiki%2FSoftware_livre&amp;rct=j&amp;q=software+livre&amp;ei=MdJVS7z3OpLe8QbkytGmBA&amp;usg=AFQjCNFAlOIDxRIJ7L1oVDMnIDRyqo4Kkg" target="_blank">software livre</a> e não suporto a arrogância de certas empresas em relação a seus concorrentes que são livres.
+
+Bem, faça como eu, assine a petição para tentar salvar o MySQL. Todos sabemos o quão importante ele é pra comunidade do software livre e afins. Já fiz a minha parte, conto com a sua também! **Divulgue!**
+
+**Faça já sua parte: <a href="http://helpmysql.org/pt/" target="_blank">http://helpmysql.org/pt/</a>**

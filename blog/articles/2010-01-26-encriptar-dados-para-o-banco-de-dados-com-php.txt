@@ -1,0 +1,38 @@
+title: "Encriptar dados para o banco de dados com PHP"
+slug: encriptar-dados-para-o-banco-de-dados-com-php
+author: Vítor Avelino
+date: 2010/01/26
+
+Quando se trata de aplicações escaláveis todo cuidado é pouco. A forma de armazenar os dados dos usuários no banco de dados é algo básico e de extrema importância, já que ninguém quer responsabilizar-se pela roubo dos mesmos.
+
+Com o passar dos anos, as pessoas especializaram-se ainda mais em quebrar dados criptografados. Isto é, já se tem histórico da quebra de md5 e sha1, o que trás uma preocupação para os desenvolvedores. Eu mesmo costumava usar esses dois tipos de criptografias nas minhas aplicações, porém já não as uso mais.
+
+Uma outra forma bem mais segura de encriptar dados é o uso do módulo** mcrypt**. Com base nisso e após algumas pesquisas, decidi criar uma simples classe utilitária que seria responsável por gerar qualquer dado criptografado que seja passado como argumento.
+
+### Classe PasswordEncrypter
+
+<pre>
+    <code class="prettyprint">
+class PasswordEncrypter {
+     /* key to encrypt/decrypt */
+     const KEY = &quot;something&quot;;
+
+     public static function generate($data) {
+         $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_CFB, '');
+         $iv = mcrypt_create_iv(mcrypt_enc_get_iv_size($td), MCRYPT_RAND);
+         $ks = mcrypt_enc_get_key_size($td);
+         mcrypt_generic_init($td, self::KEY, $iv);
+         $encrypted = mcrypt_generic($td, $data);
+
+         mcrypt_generic_deinit($td);
+         mcrypt_module_close($td);
+
+         return $encrypted;
+     }
+}
+    </code>
+</pre>
+
+Só é possível desencriptar caso alguém saiba a chave de encriptação. Fiz somente a ida; prefiro encriptar o dado de entrada do usuário e comparar com o que vem do banco de dados. A volta é super simples, basta utilizar o mdecrypt. Para maiores informações, <a href="http://www.php.net/manual/en/function.mcrypt-module-open.php" target="_blank">http://www.php.net/manual/en/function.mcrypt-module-open.php</a>
+
+Espero que ajude-os. Estou aberto a sugestões já que não sou muito técnico no tema. Fiquem à vontade! ;)

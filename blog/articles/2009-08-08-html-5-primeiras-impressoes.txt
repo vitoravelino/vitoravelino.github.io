@@ -1,0 +1,28 @@
+title: "HTML 5: primeiras impressões"
+slug: html-5-primeiras-impressoes
+author: Vítor Avelino
+date: 2009/08/08
+
+Há algum tempo já se vem discutindo o futuro da web em relação ao HTML5. Não se sabe ainda quando ficará pronto, mas já há muita coisa pronta e que dá para ser utilizada **hoje**. Quando lí comentários a respeito, achei que o  HTML5 seria uma piada. Porém, pelo que ví hoje, quebrei e feio a cara. Mudanças consideráveis e maduras em relação ao velho HTML4 aconteceram; e eu gostei. ;)
+
+Quando entrei pro mundo web, comecei com HTML e mal. Vim realmente aprender sobre sintaxe e semântica com o surgimento do XHTML e do conceito *tableless*. O que muito me alegrou no HTML5 foi poder escolher que sintaxe utilizar na hora de codificar: XHTML; e/ou HTML5. Ficou bem mais confortável para o desenvolvedor, já imaginou ter que continuar a fechar a tag *input* como no HTML4?
+
+> Mas, o que de fato o HTML5 vem trazendo de interessante?
+
+Foram criadas novas tags que dão uma maior semântica a estrutura da página. Algumas delas são o <a href="http://dev.w3.org/html5/spec/Overview.html#the-section-element" target="_blank">&lt;section&gt;</a>, <a href="http://dev.w3.org/html5/spec/Overview.html#the-header-element" target="_blank">&lt;header&gt;</a> de uma section, <a href="http://dev.w3.org/html5/spec/Overview.html#the-footer-element" target="_blank">&lt;footer&gt;</a>, <a href="http://dev.w3.org/html5/spec/Overview.html#the-nav-element" target="_blank">&lt;nav&gt;</a>, <a href="http://dev.w3.org/html5/spec/Overview.html#the-article-element" target="_blank">&lt;article&gt;</a> e, <a href="http://dev.w3.org/html5/spec/Overview.html#the-aside-element">&lt;aside&gt;</a>. Os nomes delas já são auto-explicativos e vão substituir aquele monte de <em>div's</em> que utilizávamos para "fatiar" o layout como um todo da página. Em uma das referências há a construção de um layout completamente em HTML5 que não utilizou uma tag &lt;div&gt; sequer. Talvez tenha tornado-se um pouco mais trabalhoso/complexo a construção de estruturas sintaticamente e semânticamente corretas que o de costume, porém o retorno é bem maior dado  o nível de enriquecimento nesta versão.
+
+Outras tags interessantes que vieram no HTML5 são as <a href="http://dev.w3.org/html5/spec/Overview.html#video" target="_blank">&lt;video&gt;</a> e <a href="http://dev.w3.org/html5/spec/Overview.html#audio" target="_blank">&lt;audio&gt;</a>. Não é mais necessário "embedar" elementos de vídeo, por exemplo.
+
+Bem, mas onde fica o XHTML2 nessa história toda? Oo que mais se discute sobre ele são as especificações que não tem muito a ver com as versões antigas, XHTML1.X. Uma histórinha curta que explica um pouco da real situação do HTML5 e XHTML2 pode ser encontrada <a href="http://www.smashingmagazine.com/2009/07/29/misunderstanding-markup-xhtml-2-comic-strip/" target="_blank">nessa tirinha</a>. Não acredito que o XHTML2 venha causar algum impacto ao HTML5, como aconteceu com o XHTML1.X em relação ao HTML4.
+
+O pessoal está tão animado que acabam chamando o HTML5 de (X)HTML5, devido a aceitação da sintaxe XHTML. Um lema que está pegando é:
+
+> Morte ao XHTML2, vida longa ao (X)HTML5!
+
+Tem bastante material bacana sobre HTML5. Não vou aprofundar-me mais no assunto porque essas são apenas as primeiras impressões que tive ao dar uma pequena pesquisada na web.
+
+**Referências**
+
+   * <a href="http://www.smashingmagazine.com/2009/07/16/html5-and-the-future-of-the-web/" target="_blank">http://www.smashingmagazine.com/2009/07/16/html5-and-the-future-of-the-web/</a>
+   * <a href="http://www.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/" target="_blank">http://www.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/</a>
+   * <a href="http://html5doctor.com/" target="_blank">http://html5doctor.com/</a>

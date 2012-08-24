@@ -1,0 +1,13 @@
+<section class="archives column-left">
+    <h2>Arquivo</h2>
+    <p>Segue abaixo a lista de posts publicados até o momento:</p>
+    <ul>
+      <% if archives.length > 0 %>
+        <% for entry in archives %>
+          <li>
+            <a href="<%= entry.path %>"><%= entry.title %></a> <small><%= entry.date %></small>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+</section>
