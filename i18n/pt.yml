@@ -44,6 +44,6 @@ projects:
 blog:
     about:
         paragraph1: Sou formado em Ciência da Computação pela UFCG e atualmente atuo como <em>web developer</em> com foco em <em>front-end</em>.
-        paragraph2: Mais um aventureiro na grande São Paulo em busca do <s>sonho</s> tesouro perdido.
+        paragraph2: Mais um aventureiro na Europa em busca do <s>sonho</s> tesouro perdido.
     search: sua busca aqui
     feed: Que tal alimentar-se <a href="/blog/index.xml">aqui</a>?

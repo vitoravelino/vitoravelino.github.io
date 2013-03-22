@@ -43,7 +43,7 @@ projects:
 
 blog:
     about:
-        paragraph1: I'm graduted in Computer Science by UFCG and I'm currently a web developer focused on front-end development.
-        paragraph2: Another adventurer at São Paulo searching for the lost <s>dream</s> treasure.
+        paragraph1: I'm graduted in Computer Science at UFCG and I'm currently a web developer focused on front-end development.
+        paragraph2: Another adventurer traveling around Europe searching for the lost <s>dream</s> treasure.
     search: your search here
     feed: What about feeding yourself <a href="/blog/index.xml">here</a>?
