@@ -1,14 +1,29 @@
-<% 
+<%
   content_for :title do
      "Vítor Avelino - #{t.terms.projects}"
-  end 
+  end
 %>
 <div id="main" class="main" role="main" data-type="site">
     <article>
         <h2><%= t.terms.projects %></h2>
         <p><%= t.projects.paragraph %></h2>
-        
+
         <section class="projects-list">
+            <article class="project">
+                <header>
+                    <h3><a href="http://github.com/buddycloud/webclient" target="_blank">buddycloud webclient</a></h3>
+                    <small>
+                        <span class="label">backbone.js</span>
+                        <span class="label">requirejs</span>
+                        <span class="label">javascript</span>
+                        <span class="label">html5</span>
+                        <span class="label">css3</span>
+                    </small>
+                </header>
+
+                <p><%= t.projects.buddycloud %></p>
+            </article> <!-- .project -->
+
             <article class="project">
                 <header>
                     <h3><a href="http://github.com/vitoravelino/sloth" target="_blank">sloth</a></h3>
@@ -20,11 +35,11 @@
                         <span class="label">css3</span>
                         <span class="label">flask</span>
                         <span class="label">python</span>
-                        <span class="label">api</span> 
+                        <span class="label">api</span>
                         <span class="label">heroku</span>
                     </small>
                 </header>
-                
+
                 <p><%= t.projects.sloth %></p>
             </article> <!-- .project -->
 
@@ -40,10 +55,10 @@
                         <span class="label">composer</span>
                     </small>
                 </header>
-                
+
                 <p><%= t.projects.silex %></p>
             </article> <!-- .project -->
-            
+
             <article class="project">
                 <header>
                     <h3><a href="http://github.com/fesl/figgo" target="_blank">Figgo</a></h3>
@@ -57,7 +72,7 @@
                         <span class="label">google app engine</span>
                     </small>
                 </header>
-                
+
                 <p><%= t.projects.figgo %></p>
             </article> <!-- .project -->
 
@@ -73,10 +88,10 @@
                         <span class="label">heroku</span>
                     </small>
                 </header>
-                
+
                 <p><%= t.projects.vitoravelino %></p>
             </article> <!-- .project -->
-            
+
         </section> <!-- .projects-list -->
     </article>
 </div> <!-- #main -->

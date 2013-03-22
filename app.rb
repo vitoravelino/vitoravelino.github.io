@@ -1,4 +1,4 @@
-# coding: utf-8
+# encoding: utf-8
 
 require 'bundler'
 Bundler.require(:default, ENV['RACK_ENV'])
@@ -9,7 +9,7 @@ require 'sinatra/redirect_with_flash'
 class SinatraApp < Sinatra::Base
     use Rack::Flash
     enable :sessions
-    
+
     helpers Sinatra::RedirectWithFlash
     helpers Sinatra::ContentFor
 
@@ -19,7 +19,7 @@ class SinatraApp < Sinatra::Base
       # new relic agent
       require 'newrelic_rpm'
     end
-    
+
     before do
       content_type :html, 'charset' => 'utf-8'
       session[:locale] = params[:locale] if params[:locale]
@@ -44,14 +44,14 @@ class SinatraApp < Sinatra::Base
     get '/contact' do
         erb :contact, :locals => { :selected => 'contact' }
     end
-        
+
     get '/google1839022d23e84ffd.html' do
       "google-site-verification: google1839022d23e84ffd.html"
     end
 
     post '/contact' do
       if valid_contact_form?(params[:name], params[:from], params[:body]) then
-        mail(params[:name], params[:from], params[:body]) 
+        mail(params[:name], params[:from], params[:body])
         flash[:notice] = true
       end
 
@@ -59,7 +59,7 @@ class SinatraApp < Sinatra::Base
     end
 
     private
-    
+
     def valid_contact_form?(name, from, body)
       !name.empty? and !from.empty? and !body.empty?
     end

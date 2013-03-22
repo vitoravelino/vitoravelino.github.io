@@ -8,7 +8,8 @@ terms:
     projects: Projects
     message: Message
     name: Name
-    brazil: Brazil
+    current_city: Munich
+    current_country: Germany
     about: About
     read: read
     old_posts: old posts
@@ -19,7 +20,7 @@ footer:
     license: The content of this page is licensed under
 
 about_me:
-    paragraph1: 23, brazillian, web developer, graduated in Computer Science by Federal University of Campina Grande.
+    paragraph1: 24, brazillian, web developer, graduated in Computer Science by Federal University of Campina Grande.
     paragraph2: My interests are based around web standards, accessbility and user experience, distributed systems, cloud computing, scalability and performance, [...]
     paragraph3: In the spare time a good tv show, movie, video game, coffee, hacking or some beers (sic) with friends.
 
@@ -38,10 +39,11 @@ projects:
     vitoravelino: The source code of my website and blog.
     silex: Base bootstrap project for small / non complex PHP modular applications based on Silex framework.
     figgo: A platform to management and support for cultural centers that aims the optmization and solve daily routine problems.
+    buddycloud: Web client for <a href="http://buddycloud.com" target="_blank">buddycloud</a>'s platform using its public API.
 
 blog:
     about:
         paragraph1: I'm graduted in Computer Science by UFCG and I'm currently a web developer focused on front-end development.
         paragraph2: Another adventurer at São Paulo searching for the lost <s>dream</s> treasure.
     search: your search here
-    feed: What about feeding youself <a href="/blog/index.xml">here</a>?
+    feed: What about feeding yourself <a href="/blog/index.xml">here</a>?

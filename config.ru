@@ -1,4 +1,4 @@
-# coding: utf-8
+# encoding: utf-8
 
 require 'bundler'
 Bundler.require(:default, ENV['RACK_ENV'])
@@ -23,7 +23,7 @@ if ENV['RACK_ENV'] == 'production' then
   }
 
   #
-  # redirect www to non-www and some old urls 
+  # redirect www to non-www and some old urls
   # indexed by search engines to /blog or /
   #
   use Rack::Rewrite do
@@ -37,10 +37,10 @@ if ENV['RACK_ENV'] == 'production' then
     # categories
     r301 %r{\/blog\/category\/[-\w]+$},           '/blog/'    # /blog/category/free-software
     r301 %r{\/blog\/[\w]{2}\/category\/[-\w]+$},  '/blog/'    # /blog/it/category/pasta
-    
+
     # posts
     r301 %r{\/blog\/2009\/06\/13\/wtf\/?$},           '/blog/'
-    r301 %r{\/blog\/2009\/06\/13\/fisl-10\/?$},       '/blog/'        
+    r301 %r{\/blog\/2009\/06\/13\/fisl-10\/?$},       '/blog/'
     r301 %r{\/blog\/2009\/12\/11\/cara-nova\/?$},     '/blog/'
     r301 %r{\/blog\/2009\/12\/05\/de-volta-iupi\/?$}, '/blog/'
 
@@ -49,20 +49,20 @@ if ENV['RACK_ENV'] == 'production' then
     r301 %r{\/contato\/?$}, '/contact'
     r301 %r{\/contrate-me\/?$}, '/contact'
     r301 %r{\/curriculum\/?$}, '/'
-    
+
     r301 %r{.*}, 'http://vitoravelino.net$&', :if => Proc.new { |rack_env|
-      rack_env['SERVER_NAME'] != 'vitoravelino.net' and 
+      rack_env['SERVER_NAME'] != 'vitoravelino.net' and
       rack_env['SERVER_NAME'] != 'cloudfront.vitoravelino.net'
     }
   end
-  
+
   #
   # new relic agent config
   #
   ENV['APP_ROOT'] ||= File.dirname(__FILE__)
   $:.unshift "#{ENV['APP_ROOT']}/vendor/plugins/newrelic_rpm/lib"
   require 'new_relic/agent/instrumentation/rack'
-    
+
   Toto::Server.class_eval do
     include NewRelic::Agent::Instrumentation::Rack
   end
@@ -106,7 +106,7 @@ app = Rack::Builder.new do
   map '/blog' do
    run toto
   end
-  
+
   # map all the other requests to sinatra
   map '/' do
     run SinatraApp

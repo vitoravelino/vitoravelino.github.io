@@ -8,18 +8,19 @@ terms:
     projects: Projetos
     message: Mensagem
     name: Nome
-    brazil: Brasil
+    current_city: Munique
+    current_country: Alemanha
     about: Sobre
     read: ler
     old_posts: postagens antigas
     not_found: Página não encontrada
-    error: Error
+    error: Erro
 
 footer:
     license: O conteúdo desta página está licenciado sob
 
 about_me:
-    paragraph1: 23, brasileiro, <em>web developer</em>, graduado em Ciência da Computação pela Universidade Federal de Campina Grande.
+    paragraph1: 24, brasileiro, <em>web developer</em>, graduado em Ciência da Computação pela Universidade Federal de Campina Grande.
     paragraph2: Meus interesses estão em volta dos padrões web, acessibilidade e experiência do usuário, sistemas distribuídos, computação em nuvem, escalabilidade e performance, [...]
     paragraph3: No tempo livre, um bom seriado, filme, video-game, café, <em>hacking</em> ou algumazzzz cervejazzzz (sic) com os amigos.
 
@@ -38,6 +39,7 @@ projects:
     vitoravelino: O código-fonte do meu <em>website</em> e <em>blog</em>.
     silex: Um projeto base de bootstrap para pequenas / não complexas aplicações modulares em PHP baseado no Silex <em>framework</em>.
     figgo: Uma plataforma para gestão e apoio a núcleos culturais que visa melhorar e solucionar problemas do dia-a-dia.
+    buddycloud: Cliente web da plataforma <a href="http://buddycloud.com" target="_blank">buddycloud</a> usando a sua API pública.
 
 blog:
     about:
