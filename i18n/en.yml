@@ -8,7 +8,7 @@ terms:
     projects: Projects
     message: Message
     name: Name
-    current_city: Munich
+    current_city: Berlin
     current_country: Germany
     about: About
     read: read
