@@ -8,8 +8,8 @@ terms:
     projects: Projects
     message: Message
     name: Name
-    current_city: Berlin
-    current_country: Germany
+    current_city: João Pessoa
+    current_country: Brazil
     about: About
     read: read
     old_posts: old posts
