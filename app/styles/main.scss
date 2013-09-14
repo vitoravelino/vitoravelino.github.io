@@ -1,0 +1,433 @@
+@import "compass/css3/opacity";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transition";
+@import "compass/css3/border-radius";
+@import "compass/css3/background-size";
+@import "vendor/normalize";
+@import "vendor/foundation";
+@import "fonts";
+@import "variables";
+
+//////////////////////////////////
+// GENERAL ELEMENTS - NO CLASSES
+//////////////////////////////////
+
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+body {
+  font-family: $body-font;
+  color: $base-color;
+  background-color: $white;
+}
+
+h1, h2,
+h3, h4,
+h5, h6 {
+  font-family: $title-font;
+}
+
+a {
+  color: $link-color;
+  @include opacity(0.8);
+  @include transition(opacity 175ms);
+
+  &:hover, &:active {
+    background-color: transparent;
+    @include opacity(1);
+  }
+}
+
+/////////////////////////
+// MISC
+/////////////////////////
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -30px;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.font-40px {
+  font-size: 1.66em; /* 40px/24px */
+  margin-bottom: 0.75em;
+}
+
+.font-70px {
+  font-size: 3.33em; /* 70px/24px */
+  margin-bottom: 0.5em;
+}
+
+.highlight-paragraph {
+  font-size: 1.0625em;
+}
+
+.vitor { font-family: $serif; }
+
+.text-center { text-align: center; }
+
+.hide { display: none; }
+
+/////////////////////////
+// SECTIONS
+/////////////////////////
+
+.highlight,
+.what-ive-done,
+.introduction,
+.need-developer {
+  padding-top: 25px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 30px;
+}
+
+.help {
+  cursor: help;
+}
+
+.bottom-dash {
+  border-bottom: 1px dashed;
+}
+
+/////////////////////////
+// HIGHLIGHT
+/////////////////////////
+
+.highlight {
+  font-family: $highlight-font;
+  background: $highlight-bg-color url(../images/bg-photo.jpg) no-repeat center center;
+  color: $highlight-text-color;
+  @include background-size(cover);
+  @include box-shadow(0 0 21px rgba(0, 0, 0, .73) inset);
+
+  a {
+    color: $highlight-links-color;
+    text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+  }
+
+  p {
+    max-width: 630px;
+    font-size: 1.5em;
+
+    &.font-40px {
+      font-size: 2.5em; /* 40px/16px */
+      margin-bottom: 0.75em;
+    }
+    &.font-70px {
+      font-size: 5em; /* 70px/16px */
+      margin-bottom: 0.5em;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .contact-icons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.5em;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+//////////////////////////
+// INTRODUCTION
+//////////////////////////
+
+.introduction {
+  background-color: $introduction-bg-color;
+  color: $introduction-text-color;
+  border-bottom: 1px solid rgba(0, 0, 0, .07);
+
+  a {
+    color: $introduction-links-color;
+  }
+}
+
+//////////////////////////
+// WHAT I'VE DONE
+//////////////////////////
+
+.what-ive-done {
+  color: $what-ive-done-text-color;
+  padding-bottom: 40px;
+
+  h2 {
+    font-family: $what-ive-done-font;
+  }
+
+  p {
+    font-weight: 300;
+  }
+}
+
+// PROJECTS
+.project-list-column {
+  width: 33.3%;
+}
+
+.project-list-item {
+  max-width: 313px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #fff;
+  border: $project-item-border-width solid $project-item-border-color;
+  border-bottom-width: 2px;
+  border-top-width: 0;
+  @include border-radius(3px);
+  position: relative;
+
+  &:hover {
+    .featured-image {
+      &.behind {
+        opacity: 1;
+      }
+
+      &.cover {
+        opacity: 0;
+      }
+    }
+  }
+
+  .featured-image {
+    max-width: 311px;
+    max-height: 175px;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+    -webkit-transition: opacity 0.25s ease-in;
+    -moz-transition: opacity 0.25s ease-in;
+    -o-transition: opacity 0.25s ease-in;
+
+    &.behind {
+      opacity: 0;
+    }
+
+    &.cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &.no-image {
+      padding: 39px 0;
+      text-align: center;
+      opacity: 1;
+
+      .icon {
+        font-size: 80px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, .15);
+      }
+    }
+  }
+
+  .details {
+    padding: 5px;
+    text-align: left;
+
+    p {
+      margin: 10px;
+      font-size: 0.9375em;
+    }
+
+    h5 {
+      margin: 10px;
+    }
+  }
+}
+
+.projects-list-item-tags {
+  margin: 10px;
+  list-style: none;
+  font-family: $project-item-tags-font;
+  font-weight: 300;
+  text-transform: lowercase;
+
+  li {
+    padding: 2px 5px;
+    display: inline-block;
+    font-size: 0.8125em;
+    background-color: $project-item-tags-background-color;
+    color: $project-item-tags-text-color;
+    @include border-radius(5px)
+  }
+}
+
+// specific projects styles
+.project-buddycloud {
+  a {
+    color: $project-item-buddycloud-link-color;
+
+    &:hover, &:active, &:focus {
+      color: $project-item-buddycloud-link-hover-color;
+    }
+  }
+
+  .projects-list-item-tags {
+    li {
+      color: $project-item-buddycloud-tags-text-color;
+      background-color: $project-item-buddycloud-tags-background-color;
+    }
+  }
+}
+
+.project-figgo {
+  a {
+    color: $project-item-figgo-link-color;
+
+    &:hover, &:active, &:focus {
+      color: $project-item-figgo-link-hover-color;
+    }
+  }
+
+  .projects-list-item-tags {
+    li {
+      color: $project-item-figgo-tags-text-color;
+      background-color: $project-item-figgo-tags-background-color;
+    }
+  }
+}
+
+.project-sloth {
+  a {
+    color: $project-item-sloth-link-color;
+
+    &:hover, &:active, &:focus {
+      color: $project-item-sloth-link-hover-color;
+    }
+  }
+
+  .projects-list-item-tags {
+    li {
+      color: $project-item-sloth-tags-text-color;
+      background-color: $project-item-sloth-tags-background-color;
+    }
+  }
+}
+
+.project-talktosam {
+  a {
+    color: $project-item-talktosam-link-color;
+
+    &:hover, &:active, &:focus {
+      color: $project-item-talktosam-link-hover-color;
+    }
+  }
+
+  .projects-list-item-tags {
+    li {
+      color: $project-item-talktosam-tags-text-color;
+      background-color: $project-item-talktosam-tags-background-color;
+    }
+  }
+}
+
+.project-job-board {
+  .featured-image {
+    background-color: $project-item-job-background-color;
+    color: $project-item-job-icon-color;
+  }
+
+  a {
+    color: $project-item-job-link-color;
+
+    &:hover, &:active, &:focus {
+      color: $project-item-job-link-hover-color;
+    }
+  }
+
+  .projects-list-item-tags {
+    li {
+      color: $project-item-job-tags-text-color;
+      background-color: $project-item-job-tags-background-color;
+    }
+  }
+}
+
+//////////////////////////
+// NEED DEVELOPER
+//////////////////////////
+
+.need-developer {
+  background-color: $need-developer-bg-color;
+  color: $need-developer-text-color;
+  border-top: 1px solid rgba(0, 0, 0, .15);
+
+  h3 {
+    color: $white;
+    font-family: $sans-serif;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  a {
+    color: $need-developer-links-color;
+  }
+}
+
+//////////////////////////
+// FOOTER
+//////////////////////////
+
+.footer {
+  padding: 15px 0;
+  color: $footer-text-color;
+  background-color: $light-gray;
+  border-top: 1px solid rgba(0, 0, 0, .15);
+
+  p {
+    font-family: $footer-font;
+    font-weight: 300;
+    font-size: 0.875em;
+    margin-bottom: 0;
+  }
+}
+
+.heart {
+  color: $heart-color;
+}
+
+//////////////////////////
+// MEDIA QUERIES
+//////////////////////////
+
+@media only screen and (max-width: 58em) {
+
+  .highlight {
+    p {
+      max-width: 450px;
+    }
+  }
+  .project-list-column {
+    width: 50%;
+  }
+
+  .project-list-item {
+    max-width: 313px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+}
+
+@media only screen and (max-width: 37.25em) {
+  .highlight {
+    background: $highlight-bg-color url(../images/bg-photo.jpg) no-repeat right center;
+    @include background-size(cover);
+  }
+
+  .project-list-column {
+    width: 100%;
+  }
+}

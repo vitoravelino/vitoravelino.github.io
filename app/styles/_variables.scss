@@ -1,0 +1,106 @@
+//////////////////////////
+// COLORS
+/////////////////////////
+
+$alizarin-red: #e74c3c;
+$green-sea: darken(#16a085, 2%);
+$clouds-white: #ecf0f1;
+$wet-asphalt-gray: #34495e;
+
+$sand: #FFE8B7;
+$sand2: #E8E5C4;
+$base-color: #222222;
+
+$white: #fff;
+$black: #000;
+$gray: #eee;
+$dark-gray: #444;
+$light-gray2: #d8d8d8;
+$light-gray: #ecf0f1;
+$ccc: #ccc;
+
+//////////////////////////
+// CONTENT
+/////////////////////////
+
+$sans-serif: 'Roboto', sans-serif;
+$sans-serif2: 'Raleway', sans-serif;
+$serif: 'Bree Serif', serif;
+
+// BODY
+$body-bg-color: $light-gray;
+$body-font: $sans-serif;
+$title-font: $sans-serif2;
+
+$link-color: $green-sea;
+$link-hover-color: darken($green-sea, 5%);
+
+// HIGHLIGHT
+$highlight-bg-color: $green-sea;
+$highlight-text-color: $white;
+$highlight-links-color: $sand2;
+$highlight-font: $sans-serif2;
+
+// INTRODUCTION
+$introduction-bg-color: $light-gray;
+$introduction-text-color: $base-color;
+$introduction-links-color: $link-color;
+$introduction-font: $sans-serif2;
+
+// WHAT I'VE DONE
+$what-ive-done-text-color: $base-color;
+$what-ive-done-font: $sans-serif;
+
+// NEED DEVELOPER
+$need-developer-bg-color: $green-sea;
+$need-developer-text-color: $white;
+$need-developer-links-color: $sand2;
+$need-developer-font: $sans-serif2;
+
+// PROJECT ITEM CONTAINER
+$project-item-border-color: $light-gray2;
+$project-item-border-width: 1px;
+
+// PROJECT ITEM TAGS
+$project-item-tags-text-color: $white;
+$project-item-tags-background-color: $green-sea;
+$project-item-tags-font: $sans-serif;
+
+// BUDDYCLOUD
+$project-item-buddycloud-tags-text-color: $white;
+$project-item-buddycloud-tags-background-color: #295fa0;
+$project-item-buddycloud-link-color: #295fa0;
+$project-item-buddycloud-link-hover-color: darken(#295fa0, 5%);
+
+// FIGGO
+$project-item-figgo-tags-text-color: $white;
+$project-item-figgo-tags-background-color: #998f17;
+$project-item-figgo-link-color: #998f17;
+$project-item-figgo-link-hover-color: darken(#998f17, 5%);
+
+// SLOTH
+$project-item-sloth-tags-text-color: $dark-gray;
+$project-item-sloth-tags-background-color: $light-gray2;
+$project-item-sloth-link-color: $dark-gray;
+$project-item-sloth-link-hover-color: darken(#998f17, 5%);
+
+// TALKTOSAM
+$project-item-talktosam-tags-text-color: $white;
+$project-item-talktosam-tags-background-color: $black;
+$project-item-talktosam-link-color: $dark-gray;
+$project-item-talktosam-link-hover-color: darken($dark-gray, 5%);
+
+// PROJECT ITEM JOB BOARD
+$project-item-job-background-color: $wet-asphalt-gray;
+$project-item-job-icon-color: $clouds-white;
+$project-item-job-tags-text-color: $white;
+$project-item-job-tags-background-color: $wet-asphalt-gray;
+$project-item-job-link-color: $wet-asphalt-gray;
+$project-item-job-link-hover-color: darken($wet-asphalt-gray, 5%);
+
+// FOOTER
+$footer-text-color: $base-color;
+$footer-font: $sans-serif2;
+
+// MISC
+$heart-color: $alizarin-red;
