@@ -89,18 +89,28 @@ module.exports = function (grunt) {
                 }
             }
         },
+        compress: {
+            main: {
+                options: {
+                  mode: 'gzip'
+                },
+                files: [
+                  // Each of the files in the src/ folder will be output to
+                  // the dist/ folder each with the extension .gz.js
+                  {expand: true, src: ['dist/scripts/*.js', 'dist/styles/*.css']}
+                ]
+            }
+        },
         cdn: {
             options: {
                 /** @required - root URL of your CDN (may contains sub-paths as shown below) */
-                cdn: '//assets.vitoravelino.net/',
+                cdn: '//assets.vitoravelino.me/',
                 /** @optional  - if provided both absolute and relative paths will be converted */
                 flatten: false
             },
             dist: {
                 /** @required  - string (or array of) including grunt glob variables */
-                src: ['./dist/index.html'],
-                /** @optional  - if provided a copy will be stored without modifying original file */
-                dest: './dist'
+                src: ['./dist/index.html', './dist/styles/*.css']
             }
         },
         open: {
@@ -342,7 +352,7 @@ module.exports = function (grunt) {
         'copy',
         'rev',
         'usemin',
-        'cdn'
+        'compress'
     ]);
 
     grunt.registerTask('default', [

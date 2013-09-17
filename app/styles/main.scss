@@ -104,7 +104,7 @@ a {
 
 .highlight {
   font-family: $highlight-font;
-  background: $highlight-bg-color url(../images/bg-photo.jpg) no-repeat center center;
+  background: $highlight-bg-color url(/images/bg-photo.jpg) no-repeat center center;
   color: $highlight-text-color;
   @include background-size(cover);
   @include box-shadow(0 0 21px rgba(0, 0, 0, .73) inset);
@@ -423,7 +423,7 @@ a {
 
 @media only screen and (max-width: 37.25em) {
   .highlight {
-    background: $highlight-bg-color url(../images/bg-photo.jpg) no-repeat right center;
+    background: $highlight-bg-color url(/images/bg-photo.jpg) no-repeat right center;
     @include background-size(cover);
   }
 
