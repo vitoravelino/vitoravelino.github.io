@@ -1,9 +1,0 @@
-## vitoravelino.net
-
-This is the source code of my site and blog.
-
-I'm using (toto)[http://cloudhead.io/toto] for the blog and (Sinatra)[http://www.sinatrarb.com/] for the site.
-
-With Rack::Builder, I could serve different apps in the same environment.
-
-I'm deploying it at Heroku.
