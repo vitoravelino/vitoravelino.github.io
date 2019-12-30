@@ -1,5 +1,0 @@
---require should
---reporter spec
---compilers coffee:coffee-script 
---slow 20
---growl
