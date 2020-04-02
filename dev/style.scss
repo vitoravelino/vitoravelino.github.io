@@ -22,6 +22,13 @@ $cubic: cubic-bezier(0.64, 0.09, 0.08, 1);
 }
 
 //
+// Functions
+//
+@function rem($size) {
+  @return $size / 16px * 1rem;
+}
+
+//
 // Effects
 //
 
@@ -50,11 +57,11 @@ html, body {
   padding: 0;
   height: 100vh;
   font-family: $font-family;
-  font-size: 17px;
 }
 
 p {
   line-height: 1.5;
+  font-size: rem(17px);
 }
 
 a {
@@ -70,8 +77,8 @@ a {
 
 .container {
   height: 100vh;
-  max-width: 450px;
-  padding: 0 30px;
+  max-width: rem(450px);
+  padding: 0 rem(30px);
   position: absolute;
   z-index: 5;
 
@@ -82,17 +89,12 @@ a {
 }
 
 .header {
-  padding-top: 50px;
-  padding-bottom: 20px;
+  padding-top: rem(50px);
+  padding-bottom: rem(20px);
 
   @media (max-width: 1023px) {
     text-align: center;
   }
-}
-
-.footer {
-  padding-bottom: 30px;
-  font-size: 1.25rem;
 }
 
 .zen-circle {
@@ -100,22 +102,27 @@ a {
   animation-iteration-count: infinite;
   animation-name: pulse;
   fill: $base-color;
-  filter: drop-shadow( 1px 1px 3px rgba(218, 219, 192, .7));
-  width: 100px;
+  filter: drop-shadow(1px 1px 3px rgba(218, 219, 192, .7));
+  width: rem(100px);
 }
 
 .social-icons {
   list-style: none;
-  padding: 15px 0;
+  padding: rem(15px) 0;
 
   li {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: rem(20px);
   }
 
   a {
     border-bottom: none;
   }
+}
+
+.footer {
+  padding-bottom: rem(30px);
+  font-size: rem(21.25px);
 }
 
 .credits {
@@ -130,7 +137,7 @@ a {
   &__icon {
     fill: $base-color;
     transition: fill 250ms;
-    width: 20px;
+    width: rem(20px);
 
     &:hover {
       fill: $bright-color;
@@ -142,9 +149,9 @@ a {
   position: relative;
 
   &:before {
-    border-left: solid 5px transparent;
-    border-right: solid 5px transparent;
-    border-top: solid 5px grey;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid grey;
     content: '';
     height: 0;
     left: 50%;
@@ -163,7 +170,7 @@ a {
     background: grey;
     color: white;
     content: attr(data-tooltip);
-    font-size: 14px;
+    font-size: rem(14px);
     left: -120px;
     opacity: 0;
     padding: 6px 10px;
