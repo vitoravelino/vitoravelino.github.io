@@ -1,7 +1,9 @@
-const isMobile = window.matchMedia('only screen and (max-width: 1279px)')
-  .matches;
+//
+// Particles
+//
+const isSmallScreen = window.matchMedia('only screen and (max-width: 1279px)').matches;
 
-if (!isMobile) {
+if (!isSmallScreen) {
   require('tsparticles');
 
   tsParticles.load('particles', {
@@ -9,6 +11,9 @@ if (!isMobile) {
   });
 }
 
+//
+//  Analytics
+//
 document.querySelectorAll('[data-track-label]').forEach((el) => {
   el.addEventListener('click', () => {
     const { trackCategory, trackLabel } = el.dataset;
@@ -18,3 +23,19 @@ document.querySelectorAll('[data-track-label]').forEach((el) => {
     }
   });
 });
+
+//
+// Favicon
+//
+const isLightTheme = window.matchMedia('(prefers-color-scheme: light)').matches;
+const lightIcon = document.querySelector('[media="(prefers-color-scheme: light)"]');
+const darkIcon = document.querySelector('[media="(prefers-color-scheme: dark)"]');
+
+lightIcon.remove();
+darkIcon.remove();
+
+if (isLightTheme) {
+  document.head.appendChild(lightIcon);
+} else {
+  document.head.appendChild(darkIcon);
+}
