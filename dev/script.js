@@ -8,3 +8,13 @@ if (!isMobile) {
     preset: 'basic',
   });
 }
+
+document.querySelectorAll('[data-track-label]').forEach((el) => {
+  el.addEventListener('click', () => {
+    const { trackCategory, trackLabel } = el.dataset;
+
+    if (trackLabel) {
+      ga('send', 'event', trackCategory || 'Other', 'click', trackLabel);
+    }
+  });
+});
