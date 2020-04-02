@@ -53,27 +53,6 @@ html, body {
   font-size: 17px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  max-width: 25%;
-  padding: 0 30px;
-  position: absolute;
-  z-index: 5;
-}
-
-header {
-  padding-top: 50px;
-  padding-bottom: 20px;
-}
-
-
-footer {
-  padding-bottom: 30px;
-  font-size: 1.25rem;
-}
-
 p {
   line-height: 1.5;
 }
@@ -87,6 +66,33 @@ a {
   &:hover {
     color: $bright-color;
   }
+}
+
+.container {
+  height: 100vh;
+  max-width: 450px;
+  padding: 0 30px;
+  position: absolute;
+  z-index: 5;
+
+  @media (max-width: 1023px) {
+    position: relative;
+    margin: 0 auto;
+  }
+}
+
+.header {
+  padding-top: 50px;
+  padding-bottom: 20px;
+
+  @media (max-width: 1023px) {
+    text-align: center;
+  }
+}
+
+.footer {
+  padding-bottom: 30px;
+  font-size: 1.25rem;
 }
 
 .zen-circle {
@@ -193,4 +199,14 @@ a {
   margin-left: 20vw;
   width: 80vw;
   height: 100vh;
+
+  @media (max-width: 1599px) {
+    margin-left: 25vw;
+    width: 75vw;
+  }
+
+  @media (max-width: 1439px) {
+    margin-left: 29vw;
+    width: 71vw;
+  }
 }
