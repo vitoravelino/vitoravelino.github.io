@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel ./dev/index.html --out-dir ../dist --host 0.0.0.0",
-    "prod": "NODE_ENV=production rimraf {index.html,style*,script*} && parcel build ./dev/index.html --no-source-maps --out-dir ./",
+    "prod": "NODE_ENV=production rimraf {index.html,style*,script*,*.png,*.br,*.gz} && parcel build ./dev/index.html --no-source-maps --out-dir ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -27,14 +27,16 @@ document.querySelectorAll('[data-track-label]').forEach((el) => {
 //
 // Favicon
 //
-const isLightTheme = window.matchMedia('(prefers-color-scheme: light)').matches;
+const isDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const lightIcon = document.querySelector('[media="(prefers-color-scheme: light)"]');
 const darkIcon = document.querySelector('[media="(prefers-color-scheme: dark)"]');
 
 lightIcon.remove();
 darkIcon.remove();
 
-if (isLightTheme) {
+// windows apparently doesn't match either light or dark
+// default to dark icon if no match
+if (isDarkTheme) {
   document.head.appendChild(lightIcon);
 } else {
   document.head.appendChild(darkIcon);
